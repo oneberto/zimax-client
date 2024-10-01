@@ -1,8 +1,9 @@
-const findLastItem = async (Engine) => {
-  await Engine.sync();
+const findLastItem = async (engine) => {
+  await engine.sync();
 
-  const value = await Engine.findOne({
+  const value = await engine.findOne({
     order: [["pk_TimeStamp", "DESC"]],
+    // where: { pk_TimeStamp: "133704630705143838" },
   });
 
   return value;

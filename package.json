@@ -13,15 +13,13 @@
   "dependencies": {
     "@sequelize/core": "^7.0.0-alpha.37",
     "@sequelize/sqlite3": "^7.0.0-alpha.41",
+    "axios": "^1.7.7",
+    "chalk": "^5.3.0",
     "cors": "^2.8.5",
     "dayjs": "^1.11.13",
     "express": "^4.19.2",
+    "lodash": "^4.17.21",
     "nodemon": "^3.1.4",
     "socket.io": "^4.7.5"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "db/*"
-    ]
   }
 }

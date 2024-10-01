@@ -1,34 +1,31 @@
 const { DataTypes } = require("@sequelize/core");
-const { sequelize } = require("../services/sequelize");
 
-const EngineOne = sequelize.define(
-  "EngineOne",
-  {
-    pk_TimeStamp: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
+const EngineOne = (sequelize) => {
+  const model = sequelize.define(
+    "LoggedProcessValue",
+    {
+      Value: {
+        type: DataTypes.DOUBLE,
+      },
+      pk_TimeStamp: {
+        type: DataTypes.STRING,
+        primaryKey: true,
+      },
     },
-    pk_fk_Id: {
-      type: DataTypes.INTEGER,
-    },
-    Quality: {
-      type: DataTypes.INTEGER,
-    },
-    Value: {
-      type: DataTypes.DOUBLE,
-    },
-  },
-  {
-    // Other model options go here
-    // name: {
-    //   singular: "EngineOne",
-    //   plural: "EngineOne",
-    // },
+    {
+      // Other model options go here
+      // name: {
+      //   singular: "EngineOne",
+      //   plural: "EngineOne",
+      // },
 
-    freezeTableName: true,
-    timestamps: false,
-  }
-);
+      freezeTableName: true,
+      timestamps: false,
+    }
+  );
+
+  return model;
+};
 
 module.exports = {
   EngineOne,
